@@ -157,7 +157,7 @@ const Tasks = () => {
                 </button>
                 <button
                   onClick={handleSignOut}
-                  className="bg-red-500 text-white p-2  mx-2 rounded-md hover:bg-red-600"
+                  className="bg-red-500 text-white p-2  mx-2 rounded-md hover:bg-red-600 "
                 >
                   Sign out
                 </button>
@@ -169,7 +169,7 @@ const Tasks = () => {
                     title="Mandatory and Urgent"
                     status="mandatory-urgent"
                     tasks={tasks}
-                    color="#FF6961" // Pastel Merah
+                    color="#bc8bfe" // Pastel Merah
                     handleEditTask={handleEditTask}
                     handleDeleteTask={handleDeleteTask}
                     handleToggleComplete={handleToggleComplete}
@@ -178,7 +178,7 @@ const Tasks = () => {
                     title="Mandatory, But Not Urgent"
                     status="mandatory-not-urgent"
                     tasks={tasks}
-                    color="#FDFD96" // Pastel Kuning
+                    color="#cfacfb" // Pastel Kuning
                     handleEditTask={handleEditTask}
                     handleDeleteTask={handleDeleteTask}
                     handleToggleComplete={handleToggleComplete}
@@ -187,7 +187,7 @@ const Tasks = () => {
                     title="Unmandatory and Urgent"
                     status="unmandatory-urgent"
                     tasks={tasks}
-                    color="#FFB347" // Pastel Oranye
+                    color="#d1b6f6" // Pastel Oranye
                     handleEditTask={handleEditTask}
                     handleDeleteTask={handleDeleteTask}
                     handleToggleComplete={handleToggleComplete}
@@ -196,7 +196,7 @@ const Tasks = () => {
                     title="Unmandatory and Not Urgent"
                     status="unmandatory-not-urgent"
                     tasks={tasks}
-                    color="#77DD77" // Pastel Hijau
+                    color="#e7d7fd" // Pastel Hijau
                     handleEditTask={handleEditTask}
                     handleDeleteTask={handleDeleteTask}
                     handleToggleComplete={handleToggleComplete}
