@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/login";
 import Register from "./components/register";
@@ -9,9 +9,9 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/todolist/register" element={<Register />} />
+          <Route path="/todolist" element={<Login />} />
+          <Route path="/todolist/tasks" element={<Tasks />} />
         </Routes>
       </div>
     </Router>

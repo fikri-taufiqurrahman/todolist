@@ -28,7 +28,7 @@ const Register = () => {
         displayName: displayName,
       });
 
-      navigate("/");
+      navigate("/todolist");
     } catch (error) {
       setError(error.message);
     }
@@ -77,7 +77,7 @@ const Register = () => {
         <div className="text-center">
           <p className="mb-4">Already have an account?</p>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/todolist")}
             className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600"
           >
             Login

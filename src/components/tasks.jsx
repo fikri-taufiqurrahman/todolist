@@ -29,7 +29,7 @@ const Tasks = () => {
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      navigate("/");
+      navigate("/todolist");
     } catch (error) {
       console.error("Error signing out: ", error);
     }

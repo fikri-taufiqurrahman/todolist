@@ -17,7 +17,7 @@ const Login = () => {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, provider);
-      navigate("/tasks");
+      navigate("/todolist/tasks");
     } catch (error) {
       setError(error.message);
     }
@@ -26,7 +26,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/tasks");
+      navigate("/todolist/tasks");
     } catch (error) {
       setError(error.message);
     }
@@ -88,7 +88,7 @@ const Login = () => {
             <p className="mb-4">
               Don't have an account?{" "}
               <a
-                onClick={() => navigate("/register")}
+                onClick={() => navigate("/todolist/register")}
                 className="text-blue cursor-pointer"
               >
                 Create Profile
