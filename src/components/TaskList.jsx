@@ -72,7 +72,7 @@ const TaskList = ({
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    className={`p-1 border-b last:border-none flex justify-between items-center ${
+                    className={`p-3 border-b last:border-none flex justify-between items-center ${
                       snapshot.isDragging ? "bg-gray-100" : ""
                     }`}
                   >

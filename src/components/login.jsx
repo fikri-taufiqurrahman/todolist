@@ -6,6 +6,7 @@ import {
   provider,
 } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { FaGoogle, FaEnvelope, FaLock } from "react-icons/fa";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -49,7 +50,8 @@ const Login = () => {
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
           {error && <p className="mb-4 text-red-500">{error}</p>}
-          <div className="mb-4">
+          <div className="mb-4 flex items-center">
+            <FaEnvelope className="mr-4  text-gray-400" />
             <input
               type="email"
               placeholder="Email"
@@ -58,7 +60,8 @@ const Login = () => {
               className="w-full p-3 border border-gray-300 rounded-md"
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 flex items-center">
+            <FaLock className="mr-4 border border-gray-100 rounded md text-gray-400" />
             <input
               type="password"
               placeholder="Password"
@@ -78,9 +81,9 @@ const Login = () => {
           <div className="text-center mb-4">
             <button
               onClick={signInWithGoogle}
-              className="w-full bg-red-500 text-white p-3 rounded-md hover:bg-red-600"
+              className="w-full bg-red-500 text-white p-3 rounded-md hover:bg-red-600 flex items-center justify-center"
             >
-              Sign in with Google
+              <FaGoogle className="mr-2" /> Sign in with Google
             </button>
           </div>
           <div className="text-center">
@@ -88,9 +91,9 @@ const Login = () => {
               Don't have an account?{" "}
               <a
                 onClick={() => navigate("/todolist/register")}
-                className="text-blue cursor-pointer"
+                className="text-blue-500 cursor-pointer"
               >
-                Create Profile
+                Create Account
               </a>
             </p>
           </div>
