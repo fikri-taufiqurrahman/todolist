@@ -1,4 +1,3 @@
-// src/components/Login.jsx
 import React, { useState } from "react";
 import {
   auth,
@@ -33,10 +32,10 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       {/* Left side */}
-      <div className="flex flex-1 items-center justify-center bg-blue-500 text-white">
-        <div className="p-8 max-w-md text-center">
+      <div className="flex flex-1 items-center justify-center bg-blue-500 text-white p-8">
+        <div className="max-w-md text-center">
           <h1 className="text-3xl font-bold mb-4">To Do List App</h1>
           <p>
             Get exclusive access to our To Do List app. Stay organized and
@@ -46,7 +45,7 @@ const Login = () => {
       </div>
 
       {/* Right side */}
-      <div className="flex flex-1 items-center justify-center bg-gray-100">
+      <div className="flex flex-1 items-center justify-center bg-gray-100 p-8">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
           {error && <p className="mb-4 text-red-500">{error}</p>}

@@ -164,7 +164,7 @@ const Tasks = () => {
               </div>
 
               <DragDropContext onDragEnd={onDragEnd}>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-20 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-5 mt-4">
                   <TaskList
                     title="Mandatory and Urgent"
                     status="mandatory-urgent"
