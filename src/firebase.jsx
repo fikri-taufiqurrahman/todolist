@@ -23,12 +23,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBali2zQJ5LIIISP0px06vp9rMKYvTiWAo",
-  authDomain: "todo-list-6b24f.firebaseapp.com",
-  projectId: "todo-list-6b24f",
-  storageBucket: "todo-list-6b24f.appspot.com",
-  messagingSenderId: "618119615878",
-  appId: "1:618119615878:web:1eb586993331d07e304807",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
