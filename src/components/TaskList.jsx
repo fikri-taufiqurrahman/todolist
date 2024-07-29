@@ -22,13 +22,13 @@ const getRemainingTime = (deadline) => {
 const TaskList = ({
   title = "",
   status = "",
-  tasks = [],
-  color = "#FFFFFF", // Default to white if color is not provided
+  columns = {}, // Mengganti `tasks` dengan `columns`
+  color = "#FFFFFF",
   handleEditTask = () => {},
   handleDeleteTask = () => {},
   handleToggleComplete = () => {},
 }) => {
-  const filteredTasks = tasks.filter((task) => task.status === status);
+  const tasks = columns[status]?.items || []; // Mengambil tugas berdasarkan status
   const [remainingTimes, setRemainingTimes] = useState({});
 
   useEffect(() => {
@@ -46,13 +46,13 @@ const TaskList = ({
     const interval = setInterval(updateRemainingTimes, 60000); // Update every minute
 
     return () => clearInterval(interval);
-  }, [tasks]);
+  }, [tasks]); // Memastikan useEffect dijalankan ulang hanya jika `tasks` berubah
 
   return (
     <Droppable droppableId={status}>
       {(provided, snapshot) => (
         <div
-          className={`bg-white shadow-lg rounded-lg  mb-4 w-full ${
+          className={`bg-white shadow-lg rounded-lg mb-4 w-full ${
             snapshot.isDraggingOver ? "bg-blue-100" : ""
           }`}
           {...provided.droppableProps}
@@ -62,10 +62,12 @@ const TaskList = ({
             className="rounded-t-lg p-2 mb-2"
             style={{ backgroundColor: color }}
           >
-            <h2 className="text-lg font-bold text-center">{title}</h2>
+            <h2 className="text-lg font-bold text-center">
+              {title} ({tasks.length})
+            </h2>
           </div>
           <ul>
-            {filteredTasks.map((task, index) => (
+            {tasks.map((task, index) => (
               <Draggable key={task.id} draggableId={task.id} index={index}>
                 {(provided, snapshot) => (
                   <li

@@ -71,11 +71,38 @@ const getTasks = async (user) => {
       id: doc.id,
       ...doc.data(),
     }));
-    console.log(tasks);
-    return tasks;
+
+    // Mengelompokkan tugas berdasarkan status
+    const groupedTasks = {
+      "mandatory-urgent": {
+        title: "Mandatory Urgent",
+        items: [],
+      },
+      "mandatory-not-urgent": {
+        title: "Mandatory, But Not Urgent",
+        items: [],
+      },
+      "unmandatory-urgent": {
+        title: "Urgent, But Not Mandatory",
+        items: [],
+      },
+      "unmandatory-not-urgent": {
+        title: "Not Urgent and Not Mandatory",
+        items: [],
+      },
+    };
+
+    tasks.forEach((task) => {
+      if (groupedTasks[task.status]) {
+        groupedTasks[task.status].items.push(task);
+      }
+    });
+
+    console.log(groupedTasks);
+    return groupedTasks;
   } catch (e) {
     console.error("Error fetching tasks: ", e);
-    return [];
+    return {};
   }
 };
 
@@ -92,15 +119,9 @@ const updateTask = async (taskId, updatedTask) => {
     console.error("Error updating document: ", e);
   }
 };
-const updateTaskDnD = async (taskId, updatedTask) => {
-  try {
-    const taskRef = doc(db, "tasks", taskId);
-    await updateDoc(taskRef, {
-      ...updatedTask,
-    });
-  } catch (e) {
-    console.error("Error updating document: ", e);
-  }
+const updateTaskDnD = async (taskId, status) => {
+  const taskDoc = doc(db, "tasks", taskId);
+  await updateDoc(taskDoc, { status });
 };
 
 const deleteTask = async (taskId) => {

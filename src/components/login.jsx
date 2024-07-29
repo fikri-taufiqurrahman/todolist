@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
       {/* Left side */}
-      <div className="flex flex-1 items-center justify-center bg-blue-500 text-white p-8">
+      <div className="flex flex-1 items-center justify-center bg-blue-500 text-white p-8 animate-slideIn">
         <div className="max-w-md text-center">
           <h1 className="text-3xl font-bold mb-4">To Do List App</h1>
           <p>
@@ -51,7 +51,7 @@ const Login = () => {
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
           {error && <p className="mb-4 text-red-500">{error}</p>}
           <div className="mb-4 flex items-center">
-            <FaEnvelope className="mr-4  text-gray-400" />
+            <FaEnvelope className="mr-4 text-gray-400" />
             <input
               type="email"
               placeholder="Email"
@@ -61,7 +61,7 @@ const Login = () => {
             />
           </div>
           <div className="mb-4 flex items-center">
-            <FaLock className="mr-4 border border-gray-100 rounded md text-gray-400" />
+            <FaLock className="mr-4 text-gray-400" />
             <input
               type="password"
               placeholder="Password"

@@ -5,7 +5,18 @@ export default {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            keyframes: {
+                slideIn: {
+                    '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                    '80%': { transform: 'translateX(0)', opacity: '1' },
+                    '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+            },
+            animation: {
+                slideIn: 'slideIn 2s ease-out',
+            },
+        },
     },
     plugins: [],
 }

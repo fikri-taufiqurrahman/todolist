@@ -42,10 +42,10 @@ const Register = () => {
         <div className="mb-4">
           <input
             type="text"
-            placeholder="Display Name"
+            placeholder="Username"
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md"
+            className="w-full p-3 border border-gray-300  rounded-md"
           />
         </div>
         <div className="mb-4">
